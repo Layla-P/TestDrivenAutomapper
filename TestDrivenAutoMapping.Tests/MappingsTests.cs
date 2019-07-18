@@ -23,27 +23,27 @@ namespace TestDrivenAutoMapping.Tests
 
 
         [Test]
-        public void Map_Should_MapHumanToHumanViewModel()
+        public void Map_Should_MapPersonToPersonViewModel()
         {
             Mapper.AssertConfigurationIsValid();
 
-            var entity = new Human();
-            var vm = Mapper.Map<HumanViewModel>(entity);
+            var entity = new Person();
+            var vm = Mapper.Map<PersonViewModel>(entity);
 
             Assert.NotNull(vm);
-            Assert.IsInstanceOf(typeof(HumanViewModel), vm);
+            Assert.IsInstanceOf(typeof(PersonViewModel), vm);
         }
 
         [Test]
-        public void Map_Should_MapHumanViewModelToHuman()
+        public void Map_Should_MapPersonViewModelToPerson()
         {
             Mapper.AssertConfigurationIsValid();
 
-            var vm = new HumanViewModel();
-            var entity = Mapper.Map<Human>(vm);
+            var vm = new PersonViewModel();
+            var entity = Mapper.Map<Person>(vm);
 
             Assert.NotNull(vm);
-            Assert.IsInstanceOf(typeof(Human), entity);
+            Assert.IsInstanceOf(typeof(Person), entity);
         }
     }
 }

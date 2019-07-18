@@ -11,8 +11,8 @@ namespace TestDrivenAutoMapping.Common.Mappings
     {
         public Mappings()
         {
-            CreateMap<HumanViewModel, Human>();
-            CreateMap<Human, HumanViewModel>();
+            CreateMap<PersonViewModel, Person>();
+            CreateMap<Person, PersonViewModel>();
 
             CreateMap<string, DateTime>().ConvertUsing(new StringToDateTimeConverter());
             CreateMap<DateTime, string>().ConvertUsing(new DateTimeToStringConverter());

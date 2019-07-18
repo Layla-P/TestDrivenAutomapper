@@ -4,7 +4,7 @@ using TestDrivenAutoMapping.Common.Models;
 
 namespace TestDrivenAutoMapping.Common.ViewModels
 {
-    public class HumanViewModel
+    public class PersonViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
