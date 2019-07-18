@@ -4,6 +4,6 @@
     {
         public string Name { get; set; }
         public int ManagerId { get; set; }
-        public HumanViewModel Manager { get; set; }
+        public PersonViewModel Manager { get; set; }
     }
 }

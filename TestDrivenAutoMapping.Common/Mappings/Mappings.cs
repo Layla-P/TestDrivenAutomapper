@@ -11,14 +11,14 @@ namespace TestDrivenAutoMapping.Common.Mappings
     {
         public Mappings()
         {
-            CreateMap<HumanViewModel, Human>()
+            CreateMap<PersonViewModel, Person>()
                 .ForMember(e => e.Job, opts => opts.MapFrom(src => src.JobViewModel))
                 .ForMember(e => e.Address, opts => opts.MapFrom(model => model))
                 .ForMember(e => e.Id, opts => opts.Ignore())
                 .ForMember(e => e.JobId, opts => opts.Ignore())
                 .ForMember(e => e.AddressId, opts => opts.Ignore());
 
-            CreateMap<Human, HumanViewModel>()
+            CreateMap<Person, PersonViewModel>()
                 .ForMember(e => e.HouseName, opts => opts.MapFrom(src => src.Address.HouseName))
                 .ForMember(e => e.JobViewModel, opts => opts.MapFrom(src => src.Job))
                 .ForMember(e => e.Jobs, opts => opts.Ignore());
@@ -27,10 +27,10 @@ namespace TestDrivenAutoMapping.Common.Mappings
                 .ForMember(e => e.Id, opts => opts.Ignore())
                 .ReverseMap();
 
-            CreateMap<Human, Address>()
+            CreateMap<Person, Address>()
                 .ForMember(e => e.HouseName, opts => opts.MapFrom(src => src.Address.HouseName));
 
-            CreateMap<HumanViewModel, Address>()
+            CreateMap<PersonViewModel, Address>()
                 .ForMember(e => e.HouseName, opts => opts.MapFrom(src => src.HouseName));
 
             CreateMap<string, DateTime>().ConvertUsing(new StringToDateTimeConverter());
