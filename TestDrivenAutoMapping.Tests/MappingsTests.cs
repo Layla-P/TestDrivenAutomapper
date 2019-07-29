@@ -21,12 +21,15 @@ namespace TestDrivenAutoMapping.Tests
             });
         }
 
+        [Test]
+        public void Map_Should_HaveValidConfig()
+        {
+            Mapper.AssertConfigurationIsValid();
+        }
 
         [Test]
         public void Map_Should_MapPersonToPersonViewModel()
         {
-            Mapper.AssertConfigurationIsValid();
-
             var entity = new Person();
             var vm = Mapper.Map<PersonViewModel>(entity);
 
@@ -37,8 +40,6 @@ namespace TestDrivenAutoMapping.Tests
         [Test]
         public void Map_Should_MapPersonViewModelToPerson()
         {
-            Mapper.AssertConfigurationIsValid();
-
             var vm = new PersonViewModel();
             var entity = Mapper.Map<Person>(vm);
 
